@@ -1,0 +1,49 @@
+#list comprehensive
+
+nums = [1,2,3,4,5,6,7,8,9]
+# I want 'n' for each 'n' in nums
+mylist = []
+for n in nums:
+    mylist.append(n)
+print(mylist)
+
+#list comprehensive is same as the above wordings
+mylist1 = [n for n in nums]
+print(mylist1)
+
+#I want 'n*n' for each 'n' in nums
+mylist2 = [n*n for n in nums]
+print(mylist2)
+
+#Square Numbers
+mylist3 = map(lambda n: n*n,nums)
+print(list(mylist3))
+
+#Convert to Uppercase
+words = ["apple", "banana", "cat"]
+convert = map(lambda a:a.upper(),words)
+print(list(convert))
+
+#Filter Even Numbers
+filters = filter(lambda a:a%2==0,nums)
+print(list(filters))
+
+#Get Length of Each Word
+length = map(lambda a:len(a),words)
+print(list(length))
+
+#Multiply Two Lists
+a = [1,2,3]
+b = [4,5,6]
+mul = map(lambda a,b:a*b,a,b)
+print(list(mul))
+
+#I want (letter,num) pair for each letter in 'abcd' and each number in '1234'
+mylist4=[]
+for letter in 'abcd':
+    for number in range(4):
+        mylist4.append((letter,number))
+print(mylist4)
+
+mylist5 = [(letter,number) for letter in 'abcd' for number in range(4)]
+print(mylist5)
