@@ -47,3 +47,28 @@ print(mylist4)
 
 mylist5 = [(letter,number) for letter in 'abcd' for number in range(4)]
 print(mylist5)
+
+#zip function match ups every up list to down
+#dictionary comprehension
+a = ["hello","hi","vannakam"]
+b = ["Soundarya","Sow","Meera"]
+print(list(zip(a,b)))
+
+#I want a dictionary {'msg':'name'} for each a,,b in zip(a,b)
+mydict = {}
+for msg,name in zip(a,b):
+    mydict[msg] = name
+print(mydict)
+
+mydict2 = {message:name for message,name in zip(a,b)}
+print(mydict2)
+
+#set comprehension
+numbers = [1,1,2,3,2,3,4,5,6,6,6,5,4,7,8,9,8,6]
+myset = set()
+for n in numbers:
+    myset.add(n)
+print(myset)
+
+myset2 = {n for n in numbers}
+print(myset2)
