@@ -45,3 +45,94 @@ my_list.remove(600)
 print(my_list)
 del my_list[0]
 print(my_list)
+
+# Exercise 3: Sum and average of all numbers in a list
+# Calculate and print the sum and average of all numbers in a list.
+
+# Given:
+
+# my_list = [10, 20, 30, 40, 50]
+# Expected Output:
+
+# Sum: 150
+# Average: 30.0
+my_list = [10, 20, 30, 40, 50]
+print(f"Sum",sum(my_list))
+print(f"Average",(sum(my_list))/len(my_list))
+
+# Exercise 4: Reverse a list
+# Given:
+
+# list1 = [100, 200, 300, 400, 500]
+# Expected output:
+
+# [500, 400, 300, 200, 100]
+list1 = [100, 200, 300, 400, 500]
+list1.reverse()
+print(list1)
+
+# Exercise 5: Turn every item of a list into its square
+# Given a list of numbers. write a program to turn every item of a list into its square.
+
+# Given:
+
+# numbers = [1, 2, 3, 4, 5, 6, 7]
+# Expected output:
+
+# [1, 4, 9, 16, 25, 36, 49]
+numbers = [1, 2, 3, 4, 5, 6, 7]
+numb = map(lambda n: n*n,numbers)
+print(list(numb))
+
+# Exercise 6: Find Maximum and Minimum
+# Find and print the largest and smallest number in a list [8, 2, 15, 1, 9].
+
+# Given:
+
+# data = [8, 2, 15, 1, 9]
+# Expected Output:
+
+# Largest number: 15
+# Smallest number: 1
+data = [8, 2, 15, 1, 9]
+print(f"Largest:",max(data))
+print(f"Smallest",min(data))
+
+# Exercise 7: Count Occurrences
+# Count and print how many times 'Football' appears in list.
+
+# Given:
+
+# sports = ['Cricket', 'Football', 'Hockey', 'Football', 'Tennis'].
+sports = ['Cricket', 'Football', 'Hockey', 'Football', 'Tennis']
+total_sport = sports.count('Football')
+print(total_sport)
+
+# Exercise 9: Create a copy of a list
+# Create a copy of a list [10, 20, 30] and modify the copy. Print both the original and the copied list to demonstrate they are independent.
+list1 = [10, 20, 30]
+list2 = list1.copy()
+list2.append(40)
+print(list1)
+print(list2)
+
+# Exercise 10: Combine two lists
+# Combine given two lists into a single list and print it.
+
+# Given:
+
+# list_a = [1, 2]
+# list_b = [3, 4]
+list_a = [1, 2]
+list_b = [3, 4]
+list_c = list_a+list_b
+print(list_c)
+
+# Exercise 11: Remove empty strings from the list of strings
+# list1 = ["Mike", "", "Emma", "Kelly", "", "Brad"]
+# Expected output:
+
+# ["Mike", "Emma", "Kelly", "Brad"]
+list1 = ["Mike", "", "Emma", "Kelly", "", "Brad"]
+a = filter(None,list1)
+print(list(a))
