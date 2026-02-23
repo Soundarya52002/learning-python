@@ -1,0 +1,35 @@
+f = open('dummy.txt','r')
+print(f.name)
+f.close()
+
+#we are creating a context manager so we dont need to use the close method
+with open('dummy.txt','r') as f:
+    #reading the entire file
+    #f_context = f.read()
+    #reading the lines
+    #f_context1 = f.readlines()
+    #reading single line 
+    # f_context2 = f.readline()
+    # print(f_context2)
+    # for i in f:
+    #     print(i)
+
+    #to print the 10 characters
+    size_of_the_line = 10
+    f_contents = f.read(size_of_the_line)
+    while len(f_contents) > 0:
+        print(f_contents,end='*')
+        f_contents = f.read(size_of_the_line)
+
+
+# to write a file
+with open('test.txt','w') as f:
+    f.write('Testing')
+    f.seek(0)
+    f.write('R')
+
+#to read and write
+with open('dummy.txt','r') as rf:
+    with open('test_copy','w') as wf:
+        for line in rf:
+            wf.write(line)
