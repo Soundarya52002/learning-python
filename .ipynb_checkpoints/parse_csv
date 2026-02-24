@@ -1,0 +1,9 @@
+import csv
+
+with open(r'D:\Python for data science\.ipynb_checkpoints\student.csv','r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    with open(r'D:\Python for data science\.ipynb_checkpoints\student_copy.csv','w') as csv_write_file:
+        csv_writer = csv.writer(csv_write_file,delimiter='-')
+        for line in csv_reader:
+            csv_writer.writerow(line)
+           

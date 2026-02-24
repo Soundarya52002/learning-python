@@ -1,0 +1,23 @@
+import os
+
+#to print the current working directory
+print(os.getcwd())
+#to change it
+os.chdir("D:\\")
+print(os.getcwd())
+#to see what are the folders in d drive
+print(os.listdir())
+#to make the folder without subfolder
+#os.mkdir('osmodule')
+#print(os.listdir())
+#to make the folder with subfolder
+# os.makedirs('osmodule1/osmod')
+# print(os.listdir())
+
+#to delete the folder
+# os.rmdir('osmodule')
+# print(os.listdir())
+#to delete the folders with subfolders
+#os.removedirs('osmodule1/osmod')
+#to go to the home directory
+print(os.environ.get('HOME'))
