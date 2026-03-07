@@ -1,0 +1,28 @@
+# Exercise 7: Write To a File
+# Write a Python program to create a new file named “output.txt” and write the string “Hello, PYnative!” into it.
+# text_to_write = 'Hello, PYnative!'
+# with open('writing_file.txt','w') as wf:
+#     wf.write(text_to_write)
+
+# Exercise 8: Append To a File
+# Modify the previous program to append the string “This is an appended line.” to the end of “output.txt”.
+appending_string = "This is an appended line"
+with open('writing_file.txt','a') as af:
+    af.write("\n"+ appending_string)
+
+# Exercise 9: Copy a File
+# Write a program that takes two filenames as input (source and destination) and copies the content of the source file to the destination file.
+def copying_file(source,destination):
+    try:
+        with open(source,'r') as rf:
+            content = rf.read()
+        with open(destination,'w') as wf:
+            wf.write(content)
+        print(f"Successfully copied {source} to {destination}")
+    except Exception as e:
+        print("Error")
+
+source_loc = 'D:\Python for data science\.ipynb_checkpoints\sample.txt'
+des_loc = 'Destination.txt'
+copying_file(source_loc,des_loc)
+
