@@ -1,0 +1,79 @@
+# Exercise 1: Read a File
+# Write a Python program to read the entire contents of a text file named “sample.txt” and print it to the console.
+try:
+    with open(r'D:\Python for data science\.ipynb_checkpoints\sample.txt','r') as rf:
+        print(rf.read())
+except FileNotFoundError:
+    print("File not found")
+# Exercise 2: Read File Line by Line
+# Write a Python program to read the text file named “sample.txt” line by line and print each line.
+try:
+    with open(r'D:\Python for data science\.ipynb_checkpoints\sample.txt','r') as rf:
+        for line in rf:
+         print(line,end=' ')
+except FileNotFoundError:
+    print("File not found")
+# Exercise 3: Read Specific Lines From a File
+# Write a Python program to read only the first 5 lines of “sample.txt”.
+try:
+    with open(r'D:\Python for data science\.ipynb_checkpoints\sample.txt','r') as rf:
+        for line in range(5):
+         print(rf.readline())
+except FileNotFoundError:
+    print("File not found")
+# Exercise 4: Count Words From a File
+# Create a function that takes a filename as input and returns the total number of words in that file.
+import re
+
+def count_words_from_a_file(filename):
+    try:
+        with open(filename,'r') as rf:
+            content = rf.read().lower()
+            words = re.findall(r'\b\w+\b', content)
+            return len(words)
+    except FileNotFoundError:
+        print("File not found")
+        return 0
+
+words_count = count_words_from_a_file('D:\Python for data science\.ipynb_checkpoints\sample.txt')
+print(words_count)
+
+# Exercise 5: Count Total Number of Characters in File
+# Write a function that takes a filename as input and returns the total number of characters in that file (including spaces and newlines).
+
+import re
+
+def count_string_from_a_file(filename):
+    try:
+        with open(filename,'r') as rf:
+            content = rf.read().lower()
+            return len(content)
+    except FileNotFoundError:
+        print("File not found")
+        return 0
+
+words_count = count_string_from_a_file('D:\Python for data science\.ipynb_checkpoints\sample.txt')
+print(words_count)
+
+# Exercise 6: Count Specific Word From a File
+# Write a program to count the occurrences of a specific word (e.g., “hello”) in a given file.
+
+def count_specific_word(filename,word):
+    try:
+        with open(filename,'r') as rf:
+            content = rf.read().lower()
+            words = content.split()
+            count = 0
+            for w in words:
+                cleaned_words = w.strip('./,1:;!@#$%^')
+                if cleaned_words == word:
+                    count +=1
+            return count
+    except FileNotFoundError:
+        print("File not found")
+        return 0
+    
+filename_to_search = 'D:\Python for data science\.ipynb_checkpoints\sample.txt'
+word_count = 'The'
+result = count_specific_word(filename_to_search,word_count)
+print(result)
