@@ -214,3 +214,73 @@ str1 = "Emma-is-a-data-scientist"
 str2 = str1.split("-")
 for a in str2:
     print(a)
+
+# Exercise 14: Remove empty strings from a list of strings
+# Given:
+# str_list = ["Emma", "Jon", "", "Kelly", None, "Eric", ""]
+# Expected Output:
+# Original list of sting
+# ['Emma', 'Jon', '', 'Kelly', None, 'Eric', '']
+# After removing empty strings
+# ['Emma', 'Jon', 'Kelly', 'Eric']
+
+str_list = ["Emma", "Jon", "", "Kelly", None, "Eric", ""]
+new_string_list = list(filter(None,str_list))
+print("After removing the empty list ",new_string_list)
+
+# Exercise 15: Remove special symbols / punctuation from a string
+# Given:
+# str1 = "/*Jon is @developer & musician"
+# Expected Output:
+# "Jon is developer musician"
+import string
+str1 = "/*Jon is @developer & musician"
+str2 = "".join(ch for ch in str1 if ch not in string.punctuation)
+print("After removing the special characters ", str2)
+
+# Exercise 16: Removal all characters from a string except integers
+# Given:
+# str1 = 'I am 25 years and 10 months old'
+# Expected Output:
+# 2510
+
+str1 = 'I am 25 years and 10 months old'
+str3  = "".join(i for i in str1 if i.isdigit())
+print("The digit using join method is ",str3)
+
+# Exercise 17: Find words with both alphabets and numbers
+# Write a program to find words with both alphabets and numbers from an input string.
+# Given:
+# str1 = "Emma25 is Data scientist50 and AI Expert"
+# Expected Output:
+# Emma25
+# scientist50
+
+str1 = "Emma25 is Data scientist50 and AI Expert"
+print("The original string is : " + str1)
+res = []
+# split string on whitespace
+temp = str1.split()
+# Words with both alphabets and numbers
+# isdigit() for numbers + isalpha() for alphabets
+# use any() to check each character
+
+for item in temp:
+    if any(char.isalpha() for char in item) and any(char.isdigit() for char in item):
+        res.append(item)
+
+print("Displaying words with alphabets and numbers")
+for i in res:
+    print(i)
+
+# Exercise 18: Replace each special symbol with # in the following string
+# Given:
+
+# str1 = '/*Jon is @developer & musician!!'
+# Expected Output:
+
+# ##Jon is #developer # musician##
+import string
+str1 = '/*Jon is @developer & musician!!'
+str2 = "".join("#" if i in string.punctuation else i for i in str1)
+print(str2)
