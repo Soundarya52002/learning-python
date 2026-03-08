@@ -1,0 +1,177 @@
+# Exercise 1A: Create a string made of the first, middle and last character
+# Write a program to create a new string made of an input string’s first, middle, and last character.
+# Given:
+# str1 = "James"
+import math
+str1 = "James"
+start = str1[0]
+mid = str1[math.floor(len(str1)/2)]
+end = str1[-1]
+print(start+mid+end)
+
+# Exercise 1B: Create a string made of the middle three characters
+# Write a program to create a new string made of the middle three characters of an input string.
+# Given:
+# Case 1
+# str1 = "JhonDipPeta"
+# Output
+# Dip
+# Case 2
+# str2 = "JaSonAy"
+# Output
+# Son
+str2 = "JhonDipPeta"
+middle = int(len(str2)/2)
+word = str2[middle-1:middle+2]
+print("middle three characters are ",word)
+
+# Exercise 2: Append new string in the middle of a given string
+# Given two strings, s1 and s2. Write a program to create a new string s3 by appending s2 in the middle of s1.
+# Given:
+# s1 = "Ault"
+# s2 = "Kelly"
+# Expected Output:
+# AuKellylt
+
+s1 ="Ault"
+s2 ="Kelly"
+middle = int(len(s1)/2)
+word = s1[0:middle] + s2 + s1[middle:]
+print(word)
+
+# Exercise 3: Create a new string made of the first, middle, and last characters of each input string
+# Given two strings, s1 and s2, write a program to return a new string made of s1 and s2’s first, middle, and last characters.
+# Given:
+# s1 = "America"
+# s2 = "Japan"
+# Expected Output:
+# AJrpan
+
+s1 = "America"
+s2 = "Japan"
+mids1 = int(len(s1)/2)
+mids2 = int(len(s2)/2)
+s3 = s1[0]+s2[0]+s1[mids1]+s2[mids2]+s1[-1]+s2[-1]
+print(s3)
+
+# Exercise 4: Arrange string characters such that lowercase letters should come first
+# Given string contains a combination of the lower and upper case letters. Write a program to arrange the characters of a string so that all lowercase letters should come first.
+# Given:
+# str1 = PyNaTive
+# Expected Output:
+# yaivePNT
+
+str1 = "PyNaTive"
+lower_words = []
+upper_words = []
+
+for i in str1:
+    if i.islower():
+        lower_words.append(i)
+    else:
+        upper_words.append(i)
+result = "".join(lower_words + upper_words)
+print(result)
+
+# Exercise 5: Count all letters, digits, and special symbols from a given string
+# Given:
+# str1 = "P@#yn26at^&i5ve"
+# Expected Outcome:
+# Total counts of chars, digits, and symbols 
+# Chars = 8 
+# Digits = 3 
+# Symbol = 4
+str1 = "P@#yn26at^&i5ve"
+character = 0
+digits = 0
+symbols = 0
+for i in str1:
+    if i.isalpha():
+        character+=1
+    elif i.isnumeric():
+        digits+=1
+    else:
+        symbols+=1
+print("The total charater is :",character)
+print("The total digit is :",digits)
+print("THe total symbol is: ",symbols)
+
+# Exercise 6: Create a mixed String using the following rules
+# Given two strings, s1 and s2. Write a program to create a new string s3 made of the first char of s1, then the last char of s2, Next, the second char of s1 and second last char of s2, and so on. Any leftover chars go at the end of the result.
+# Given:
+# s1 = "Abc"
+# s2 = "Xyz"
+# Expected Output:
+# AzbycX
+
+s1 = "Abcd"
+s2 = "Xyz"
+result = ''
+for i, j in zip(s1, s2[::-1]):
+    result += i + j
+result += s1[len(s2):] + s2[::-1][len(s1):]
+print(result)
+
+# Exercise 7: String characters balance Test
+# Write a program to check if two strings are balanced. For example, strings s1 and s2 are balanced if all the characters in the s1 are present in s2. The character’s position doesn’t matter.
+# Given:
+# Case 1:
+# s1 = "Yn"
+# s2 = "PYnative"
+# Expected Output:
+# True
+# Case 2:
+# s1 = "Ynf"
+# s2 = "PYnative"
+# Expected Output:
+# False
+
+s1 = "Ynf"
+s2 = "PYnative"
+
+if s1 in s2:
+    print("True")
+else:
+    print("False")
+
+# Exercise 8: Find all occurrences of a substring in a given string by ignoring the case
+# Write a program to find all occurrences of “USA” in a given string ignoring the case.
+# Given:
+# str1 = "Welcome to USA. usa awesome, isn't it?"
+# Expected Outcome:
+# The USA count is: 2
+
+str1 = "Welcome to USA. usa awesome, isn't it?"
+counts = str1.lower().count("usa")
+print("The USA count is:", counts)
+
+# Exercise 9: Calculate the sum and average of the digits present in a string
+# Given a string s1, write a program to return the sum and average of the digits that appear in the string, ignoring all other characters.
+# Given:
+# str1 = "PYnative29@#8496"
+# Expected Outcome:
+# Sum is: 38 Average is  6.333333333333333
+str1 = "PYnative29@#8496"
+digits = []
+total = 0
+for i in str1:
+    if i.isdigit():
+        digits.append(int(i))
+for i in digits:
+    total += i
+avg = total / len(digits)
+print("Sum is:", total)
+print("Average is:", avg)
+
+# Exercise 10: Write a program to count occurrences of all characters within a string
+# Given:
+# str1 = "Apple"
+# Expected Outcome:
+# {'A': 1, 'p': 2, 'l': 1, 'e': 1}
+
+str1 = "Apple"
+charcount = dict()
+for i in str1:
+    count = str1.count(i)
+    charcount[i] = count
+print(charcount)
