@@ -175,3 +175,42 @@ for i in str1:
     count = str1.count(i)
     charcount[i] = count
 print(charcount)
+
+# Exercise 11: Reverse a given string
+# Given:
+
+# str1 = "PYnative"
+# Expected Output:
+
+# evitanYP
+str1 = "PYnative"
+str2 = str1[::-1]
+print("Reverse of the word is ",str2)
+
+# Exercise 12: Find the last position of a given substring
+# Write a program to find the last position of a substring “Emma” in a given string.
+# Given:
+# str1 = "Emma is a data scientist who knows Python. Emma works at google."
+# Expected Output:
+# Last occurrence of Emma starts at index 43
+
+str1 = "Emma is a data scientist who knows Python. Emma works at google."
+str2 = "Emma"
+print(str1.rfind(str2))
+
+# Exercise 13: Split a string on hyphens
+# Write a program to split a given string on hyphens and display each substring.
+# Given:
+# str1 = Emma-is-a-data-scientist
+# Expected Output:
+# Displaying each substring
+# Emma
+# is
+# a
+# data
+# scientist
+
+str1 = "Emma-is-a-data-scientist"
+str2 = str1.split("-")
+for a in str2:
+    print(a)
