@@ -1,0 +1,38 @@
+#instead of return in function we use the yield
+def square_numbers(num):
+    result = []
+    for i in num:
+        result.append(i*i)
+    return result
+
+mynums = [1,2,3,4,5]
+a = square_numbers(mynums)
+print("The square values are: ",a)
+
+#we can do this with list comprehension
+mynums = [1,2,3,4,5]
+a = [i*i for i in mynums]
+print(a)
+
+#we can do this with generators
+def square_numbers(num):
+    result = []
+    for i in num:
+        yield(i*i)
+
+mynums = [1,2,3,4,5]
+a = square_numbers(mynums)
+print("The square values are using the generators are(this will give the object id) : ",a)
+print("The square value is : ",next(a))
+print("The square value is : ",next(a))
+
+# Exercise 1: Create a function in Python
+# Write a program to create a function that takes two arguments, name and age, and prints their values.
+
+def value_printing(name,age):
+    print("The name is ", name)
+    print("The age is ", age)
+
+name = "Soundarya"
+age = 23
+value_printing(name,age)
