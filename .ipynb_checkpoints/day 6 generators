@@ -36,3 +36,120 @@ def value_printing(name,age):
 name = "Soundarya"
 age = 23
 value_printing(name,age)
+
+# Exercise 2: Create a function with variable length of arguments
+# Write a program to create a function func1() that accepts a variable number of arguments and prints each of their values.
+
+# Note: Create this function so that it can receive any number of arguments, process them, and display the value of each individual argument.
+def func1(*args):
+    #for i in args:
+        print(args)
+
+nums = input("Enter numbers separated by space: ")
+nums = nums.split()          # split string into list
+nums = [int(i) for i in nums] # convert to integers
+func1(*nums)
+
+# Exercise 3: Return multiple values from a function
+# Write a function calculation() that accepts two variables and calculates both their addition and subtraction. The function should then return both the sum and the difference in a single return statement.
+
+# Given:
+
+# def calculation(a, b):
+#     # Your Code
+
+# res = calculation(40, 10)
+# print(res)
+# retruning in tuple
+def calculaltion(a,b):
+     addition = a+b
+     subtraction = abs(a-b)
+     return addition,subtraction
+calcu = calculaltion(7,5)
+print(calcu)
+#can also return as list 
+def calculaltionlist(a,b):
+     addition = a+b
+     subtraction = abs(a-b)
+     return [addition,subtraction]
+calcu_list = calculaltion(7,5)
+print("addition is ",calcu_list[0])
+print("subtraction is ",calcu_list[1])
+#can also return as dict
+def calculaltiondict(a, b):
+    addition = a + b
+    subtraction = abs(a - b)
+    return {
+        "addition_value": addition,
+        "subtraction_value": subtraction
+    }
+
+calcu_dict = calculaltiondict(7, 5)
+
+print("addition is", calcu_dict["addition_value"])
+print("subtraction is", calcu_dict["subtraction_value"])
+
+# Exercise 4: Create a function with a default argument
+# Write a program to create a function show_employee() with the following specifications:
+
+# It should accept the employee’s name and salary.
+# It should display both the name and salary.
+# If the salary is not provided in the function call, it should default to 9000.
+# See: Default arguments in function
+
+# Given:
+
+# showEmployee("Ben", 12000)
+# showEmployee("Jessa")
+# Expected output:
+
+# Name: Ben salary: 12000
+# Name: Jessa salary: 9000
+def show_employee(name,sal=9000):
+     return {
+          "Name":name,
+          "salary":sal
+     }
+
+a = show_employee("Ben",12000)
+b = show_employee("Jessa")
+print("Name:", a['Name'], "salary:", a['salary'])
+print("Name:", b['Name'], "salary:", b['salary'])
+
+# Exercise 5: Create an inner function
+# Create a program with nested functions to perform an addition calculation as follows:
+
+# Define an outer function that accepts two parameters, a and b.
+# Inside this outer function, define an inner function that calculates the sum of a and b.
+# The outer function should then add 5 to this sum.
+# Finally, the outer function should return the resulting value.”
+def outer_function(a, b):
+
+    def inner_fun(a1, b1):
+        res = a1 + b1
+        return res
+
+    result = inner_fun(a, b)   # calling inner function
+    return result + 5
+
+
+print(outer_function(5, 2))
+
+# Exercise 6: Create a recursive function
+# Write a program to create a recursive function that calculates the sum of numbers from 0 to 10.
+
+# A recursive function is a function that calls itself repeatedly.
+
+# Expected Output:
+
+# 55
+
+def addition(num):
+    if num:
+        # call same function by reducing number by 1
+        return num + addition(num - 1)
+    else:
+        return 0
+
+res = addition(10)
+print(res)
