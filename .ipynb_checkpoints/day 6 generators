@@ -1,4 +1,7 @@
 #instead of return in function we use the yield
+from numpy import sort
+
+
 def square_numbers(num):
     result = []
     for i in num:
@@ -153,3 +156,187 @@ def addition(num):
 
 res = addition(10)
 print(res)
+
+# Exercise 7: Assign a different name to function and call it through the new name
+# Below is the function display_student(name, age). Assign a new name show_student(name, age) to it and call it using the new name.
+
+# Given:
+
+# def display_student(name, age):
+#     print(name, age)
+
+# display_student("Emma", 26)
+# You should be able to call the same function using
+
+# show_student(name, age)
+def display_student(name, age):
+     print(name, age)
+display_student("Emma", 26)
+show_student = display_student
+show_student("Soundarya",23)
+
+# Exercise 8: Generate a Python list of all the even numbers between 4 to 30
+# Expected Output:
+
+# [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+def even_num():
+    list_of_Even = []
+    for i in range(4,30):
+        if i%2==0:
+            list_of_Even.append(i)
+    return list_of_Even
+
+a = even_num()
+print(a)
+
+# or 
+print(list(range(4,30,2)))
+
+# Exercise 9: Find the largest item from list
+# Given:
+
+# x = [4, 6, 8, 24, 12, 2]
+# Expected Output:
+
+# 24
+x = [4, 6, 8, 24, 12, 2]
+largest = x[0]
+for i in x:
+    if i > largest:
+        largest = i 
+print(largest)
+
+# or
+print(max(x))
+
+# Exercise 10: Call Function using both positional and keyword arguments
+# Define a function describe_pet(animal_type, pet_name) that prints a description of a pet. Call this function using both positional and keyword arguments.
+
+def describe_pet(animal_type, pet_name):
+    print(f"The animal is {animal_type} and pet's name is {pet_name}")
+
+describe_pet("dog",pet_name="Tommy")
+
+# Exercise 11: Create a function with keyword arguments
+# The exercise requires you to create a function that can accept any number of keyword arguments. A keyword argument is where you specify the name of the argument along with its value (e.g., name="Alice", age=30). Inside the function, you need to access these arguments and print them in a key-value format.
+
+# Create a function print_info(**kwargs) that accepts keyword arguments and prints the key-value pairs. Call it with different keyword arguments
+
+def print_info(**kwargs):
+    if kwargs:
+        print("\n--information is--")
+
+        for key,value in kwargs.items():
+            print(f"{key}:{value}")
+    
+    else:
+        print("No information provided")
+
+print_info(name="Alice", age=30, city="New York")
+print_info(job="Engineer", salary=75000)
+print_info(country="USA", state="California", zip_code="90210")
+print_info()  # Call with no arguments
+
+# Exercise 12: Modifies global variable
+# Define a global variable global_var = 10. Write a function that modifies a global variable value.
+
+global_var = 10
+def changing(global_var):
+    global_var = 15
+    print(global_var)
+changing(global_var)
+
+# Exercise 13: Write a recursive function to calculate the factorial
+# Write a recursive function to calculate the factorial of a non-negative integer.
+
+def factorial_recursive(n):
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    elif n == 0:
+        return 1 
+    else:
+        return n * factorial_recursive(n - 1)  
+
+number = 5
+result = factorial_recursive(number)
+print(f"The factorial of {number} is {result}")  
+
+# Exercise 14: Create a lambda function that squares a given number
+# A lambda function in Python is a small anonymous function defined using the lambda keyword. The syntax is lambda arguments: expression. The expression is evaluated and returned.
+
+sq = lambda x:x**2
+n = 5
+sq_num = sq(n)
+print("the squared number is ",sq_num)
+
+# Exercise 15: Use a lambda with the filter() function to get all even numbers from a list
+# Given:
+
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# Expected Output:
+
+# The even numbers in the list are: [2, 4, 6, 8, 10]
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+a = list(filter(lambda x : x%2==0,numbers))
+print("The even number in the list are: ",a)
+
+# Exercise 16: Use a lambda with the map() function to double each element in a list
+# Given:
+
+# numbers = [1, 2, 3, 4, 5]
+# Expected Output:
+
+# The doubled numbers are: [2, 4, 6, 8, 10]
+
+numbers = [1, 2, 3, 4, 5]
+doubling = map(lambda x:x*2,numbers)
+print(list(doubling))
+
+# Exercise 17: Use a lambda with the sorted() function to sort a list of tuples based on the second element
+# Given:
+
+# data = [('apple', 5), ('banana', 2), ('cherry', 8), ('date', 1)]
+# Expected Output:
+
+# The sorted list of tuples based on the second element is: [('date', 1), ('banana', 2), ('apple', 5), ('cherry', 8)]
+
+data = [('apple', 5), ('banana', 2), ('cherry', 8), ('date', 1)]
+data.sort(key=lambda x: x[1])
+print(data)
+
+# Exercise 18: Create Higher-Order Function
+# Write a function apply_operation(func, x, y) that takes a function func and two numbers x and y as arguments, and returns the result of calling func(x, y). Demonstrate its use with different functions (e.g., addition, subtraction).
+
+# The exercise requires you to create a higher-order function, which is a function that can take other functions as arguments.
+
+def apply_operation(func, x, y):
+  """
+  Applies a given function to two numbers.
+
+  Args:
+    func: The function to apply (should take two arguments).
+    x: The first number.
+    y: The second number.
+
+  Returns:
+    The result of calling func(x, y).
+  """
+  return func(x, y)
+
+# Demonstrate with addition using a regular function
+def add(a, b):
+  return a + b
+
+result_add = apply_operation(add, 5, 3)
+print(f"Result of addition: {result_add}")
+
+# Demonstrate with subtraction using a lambda function
+subtract = lambda a, b: a - b
+result_subtract = apply_operation(subtract, 10, 4)
+print(f"Result of subtraction: {result_subtract}")
+
+# Demonstrate with multiplication using another lambda function
+multiply = lambda a, b: a * b
+result_multiply = apply_operation(multiply, 2, 6)
+print(f"Result of multiplication: {result_multiply}")
