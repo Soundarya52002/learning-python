@@ -46,3 +46,253 @@ my_list.remove(600)
 print("After removing the value: ",my_list)
 my_list.pop(0)
 print("After popping the index: ",my_list)
+
+# Exercise 3: Sum and average of all numbers in a list
+# Calculate and print the sum and average of all numbers in a list.
+
+# Given:
+
+# my_list = [10, 20, 30, 40, 50]
+# Expected Output:
+
+# Sum: 150
+# Average: 30.0
+
+my_list = [10, 20, 30, 40, 50]
+print("The sum is: ",sum(my_list))
+print("The average is: ",sum(my_list)/len(my_list))
+
+# Exercise 4: Reverse a list
+# Given:
+
+# list1 = [100, 200, 300, 400, 500]
+# Expected output:
+
+# [500, 400, 300, 200, 100]
+list1 = [100, 200, 300, 400, 500]
+print("Reversed list is: ",list(reversed(list1)))
+
+# Exercise 5: Turn every item of a list into its square
+# Given a list of numbers. write a program to turn every item of a list into its square.
+
+# Given:
+
+# numbers = [1, 2, 3, 4, 5, 6, 7]
+# Expected output:
+
+# [1, 4, 9, 16, 25, 36, 49]
+
+numbers = [1, 2, 3, 4, 5, 6, 7]
+squared_num = [x*x for x in numbers]
+print("The squared number is: ",squared_num)
+
+# Exercise 6: Find Maximum and Minimum
+# Find and print the largest and smallest number in a list [8, 2, 15, 1, 9].
+
+# Given:
+
+# data = [8, 2, 15, 1, 9]
+# Expected Output:
+
+# Largest number: 15
+# Smallest number: 1
+
+data = [8, 2, 15, 1, 9]
+maximum = max(data)
+minimum = min(data)
+print("Largest number is: ",maximum)
+print("Smallest number is: ",minimum)
+
+# Exercise 7: Count Occurrences
+# Count and print how many times 'Football' appears in list.
+
+# Given:
+
+# sports = ['Cricket', 'Football', 'Hockey', 'Football', 'Tennis'].
+
+sports = ['Cricket', 'Football', 'Hockey', 'Football', 'Tennis']
+print("The number of times football appears is: ",sports.count("Football"))
+
+# Exercise 8: Sort a list of numbers
+# Sort a given list of numbers in ascending order and print it.
+
+# Given: numbers = [5, 2, 8, 1, 9]
+
+# Expected Output:
+
+# Original list: [5, 2, 8, 1, 9]
+# Sorted list: [1, 2, 5, 8, 9]
+numbers = [5, 2, 8, 1, 9]
+print("Original list:", numbers)
+numbers.sort()
+print("Sorted list:", numbers)
+
+# Exercise 9: Create a copy of a list
+# Create a copy of a list [10, 20, 30] and modify the copy. Print both the original and the copied list to demonstrate they are independent.
+a = [10,20,30]
+b= a.copy()
+print("Copy of the list is: ",b)
+
+# Exercise 10: Combine two lists
+# Combine given two lists into a single list and print it.
+
+# Given:
+
+# list_a = [1, 2]
+# list_b = [3, 4]
+# Expected Output:
+
+# [1, 2, 3, 4]
+
+list_a = [1, 2]
+list_b = [3, 4]
+list_c = list_a+list_b
+print("Appended list is: ",list_c)
+
+# Exercise 11: Remove empty strings from the list of strings
+# list1 = ["Mike", "", "Emma", "Kelly", "", "Brad"]
+# Expected output:
+
+# ["Mike", "Emma", "Kelly", "Brad"]
+list1 = ["Mike", "", "Emma", "Kelly", "", "Brad"]
+# remove None from list1 and convert result into list
+res = list(filter(None, list1))
+print(res)
+
+# Exercise 12: Remove Duplicates from list
+# Write a function that takes a list with duplicate elements and returns a new list with only unique elements.
+
+# Given: list_with_duplicates = [1, 2, 2, 3, 1, 4, 5, 4]
+
+# Expected Output:
+
+# [1, 2, 3, 4, 5]
+
+list_with_duplicates = [1, 2, 2, 3, 1, 4, 5, 4]
+make_to_set = set(list_with_duplicates)
+make_to_list = list(make_to_set)
+print("Without duplicates: ",make_to_list)
+
+# Exercise 13: Remove all occurrences of a specific item from a list
+# Given a Python list, write a program to remove all occurrences of item 20.
+
+# Given:
+
+# list1 = [5, 20, 15, 20, 25, 50, 20]
+# Expected output:
+
+# [5, 15, 25, 50]
+list1 = [5, 20, 15, 20, 25, 50, 20]
+def remove(listing,value):
+    new = []
+    for i in listing:
+        if i!=value:
+            new.append(i)
+    return new
+
+a = remove(list1,20)
+print("After removing: ",a)
+
+# Exercise 14: List Comprehension for Numbers
+# Use list comprehension to create a new list containing only the numbers from a given list.
+
+# Given:
+
+# my_list = [1, 2, 3, 'Jessa', 4, 5, 'Kelly', 'Jhon', 6]
+# Expected Output:
+
+# [1, 2, 3, 4, 5, 6]
+my_list = [1,2,3,'Jessa',4,5,'Kelly']
+new_list = [i for i in my_list if isinstance(i, int)]
+print("Only digits: ",new_list)
+
+# Exercise 15: Access Nested Lists
+# Given a nested list, print the element '55'.
+
+# Given:
+
+# nested_list = <span style="background-color: initial; font-family: inherit; font-size: inherit; text-align: initial; color: initial;">[[10, 20, 30], [44, 55, 66], [77, 87, 99]]</span>
+
+nested_list = [[10, 20, 30], [44, 55, 66], [77, 87, 99]]
+print(f"Nested list: {nested_list}")
+element_55 = nested_list[1][1]
+print(f"The element '55' is: {element_55}")
+
+# Exercise 16: Flatten Nested List
+# Write a function to flatten a list of lists into a single, non-nested list. (e.g., [[1, 2], [3, 4]] becomes [1, 2, 3, 4]).
+
+# Given:
+
+# list_of_lists = [[1, 2], [3, 4], [5, 6, 7]]
+# Expected Output:
+
+# [1, 2, 3, 4, 5, 6, 7]
+
+list_of_lists = [[1, 2], [3, 4], [5, 6, 7]]
+
+def flat(listing):
+    new = []
+    for i in listing:
+        for j in i:
+            new.append(j)
+    return new
+
+a = flat(list_of_lists)
+print(a)
+
+#alternating
+
+def flatting(listing):
+    return[j for i in listing for j in i]
+b = flatting(list_of_lists)
+print("This is with the list comprehension: ",b)
+
+# Exercise 17: Concatenate two lists index-wise
+# Write a program to add two lists index-wise. Create a new list that contains the 0th index item from both the list, then the 1st index item, and so on till the last element. any leftover items will get added at the end of the new list.
+
+# Given:
+
+# list1 = ["M", "na", "i", "Ke"]
+# list2 = ["y", "me", "s", "lly"]
+# Expected output:
+
+# ['My', 'name', 'is', 'Kelly']
+
+list1 = ["M", "na", "i", "Ke"]
+list2 = ["y", "me", "s", "lly"]
+list3 = [i+j for i,j in zip(list1,list2)]
+print("After zipping: ",list3)
+
+# Exercise 18: Concatenate two lists in the following order
+# list1 = ["Hello ", "take "]
+# list2 = ["Dear", "Sir"]
+# Expected output:
+
+# ['Hello Dear', 'Hello Sir', 'take Dear', 'take Sir']
+
+list1 = ["Hello ", "take "]
+list2 = ["Dear", "Sir"]
+list3 = [i+j for i in list1 for j in list2]
+print("Combined lists: ",list3)
+
+# Exercise 19: Iterate both lists simultaneously
+# Given a two Python list. Write a program to iterate both lists simultaneously and display items from list1 in original order and items from list2 in reverse order.
+
+# Given
+
+# list1 = [10, 20, 30, 40]
+# list2 = [100, 200, 300, 400]
+# Expected output:
+
+# 10 400
+# 20 300
+# 30 200
+# 40 100
+
+list1 = [10, 20, 30, 40]
+list2 = [100, 200, 300, 400]
+
+list2.reverse()
+
+for i, j in zip(list1, list2):
+    print(i, j)
