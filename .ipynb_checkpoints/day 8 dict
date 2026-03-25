@@ -1,0 +1,403 @@
+# Exercise 1: Perform basic dictionary operations
+# Given:
+
+# my_dict = {'name': 'Alice', 'age': 35, 'city': 'New York'}
+# Perform following operations on given dictionary
+
+# Add New Key-Value Pair: Add a new key-value pair, 'profession': 'Doctor', to the dictionary and print the updated dictionary.
+# Modify Value: Change the value of the age key to 40 in the dictionary and print the updated dictionary.
+# Access Key: Print the value associated with the city key.
+my_dict = {'name': 'Alice', 'age': 35, 'city': 'New York'}
+my_dict['profession'] = 'Doctor'
+print("after updating the profession: ",my_dict)
+my_dict['age'] = 40
+print("After changing the age: ",my_dict)
+print("value of the key city is: ",my_dict['city'])
+
+# Exercise 2: Perform dictionary operations
+# Given:
+
+# my_dict = {'name': 'Alice', 'age': 35, 'city': 'New York', 'profession': 'Doctor'}
+# Perform following operations on given dictionary
+
+# Remove Key-Value Pair : Remove the profession key-value pair from the dictionary.
+# Get Items (Key-Value Pairs): Print all key-value pairs (items) in the dictionary.
+# Check if Key Exists in the dictionary
+
+my_dict = {'name': 'Alice', 'age': 35, 'city': 'New York', 'profession': 'Doctor'}
+del my_dict['profession']
+print("After deleting the profession: ",my_dict)
+for key,value in my_dict.items():
+    print(f"{key}:{value}")
+def existing(dicti,key_name):
+    return key_name in dicti
+a = 'age'
+b = existing(my_dict,a)
+print(f"Does {a} exists? ",b)
+
+# Exercise 3: Dictionary from Lists
+# Write a Python program to convert two Python lists into a dictionary where elements from the first list become keys and elements from the second list become values.
+
+# keys = ['Ten', 'Twenty', 'Thirty']
+# values = [10, 20, 30]
+# Expected output:
+
+# {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+
+keys = ['Ten', 'Twenty', 'Thirty']
+values = [10, 20, 30]
+res_dict = dict(zip(keys, values))
+print(res_dict)
+
+# Exercise 4: Clear Dictionary
+# Clear all key-value pairs from a given dictionary and print it.
+
+# Given:
+
+# my_dict = {'name': 'Alice', 'age': 35, 'city': 'New York'}
+# Expected Output:
+
+# {}
+
+my_dict = {'name': 'Alice', 'age': 35, 'city': 'New York'}
+my_dict.clear()
+print(my_dict)
+
+# Exercise 5: Merge two Python dictionaries into one
+# Write a code to merge two dictionaries into a new dictionary and print it.
+
+# Given:
+
+# dict1 = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+# dict2 = {'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+# Expected output:
+
+# {'Ten': 10, 'Twenty': 20, 'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+
+dict1 = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+dict2 = {'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+dict1.update(dict2)
+print(dict1)
+
+# Exercise 6: Count Character Frequencies
+# Given a string, create a dictionary where keys are characters and values are their frequencies in the string.
+
+# Given:
+
+# string1 = 'Jessa'
+# Expected Output:
+
+# Frequencies for 'Jessa': {'J': 1, 'e': 1, 's': 2, 'a': 1}
+string1 = 'Jessa'
+dict1 = {}
+for i in string1:
+    if i in dict1:
+        dict1[i] += 1
+    else:
+        dict1[i] = 1
+print(dict1)
+ 
+# Exercise 7: Access Nested Dictionary
+# Given a nested dictionary {'person': {'name': 'Alice', 'age': 30}}, print Alice’s age.
+
+# Given:
+
+# data = {'person': {'name': 'Alice', 'age': 30}}
+# Expected Output:
+
+# Alice's age is: 30
+data = {'person': {'name': 'Alice', 'age': 30}}
+nameing = data['person']['name']
+ageis = data['person']['age']
+print(f"{nameing}'s age is {ageis}")
+
+# Exercise 8: Print the value of key ‘history’ from nested dict
+# sampleDict = {
+#     "class": {
+#         "student": {
+#             "name": "Mike",
+#             "marks": {
+#                 "physics": 70,
+#                 "history": 80
+#             }
+#         }
+#     }
+# }
+# Expected output:
+
+# 80
+sampleDict = {
+    "class": {
+        "student": {
+            "name": "Mike",
+            "marks": {
+                "physics": 70,
+                "history": 80
+            }
+        }
+    }
+}
+print(sampleDict['class']['student']['marks']['history'])
+
+# Exercise 9: Modify Nested Dictionary
+# In the below dictionary, change name to ‘Jessa’.
+
+# Given:
+
+# nested_student_dict = {
+#     "class": {
+#         "student": {
+#             "name": "Mike",
+#             "marks": {
+#                 "physics": 70,
+#                 "history": 80
+#             }
+#         }
+#     }
+# }
+# Expected Output:
+
+# nested_student_dict = {
+#     "class": {
+#         "student": {
+#             "name": "Jessa",
+#             "marks": {
+#                 "physics": 70,
+#                 "history": 80
+#             }
+#         }
+#     }
+# }
+
+
+nested_student_dict = {
+    "class": {
+        "student": {
+            "name": "Mike",
+            "marks": {
+                "physics": 70,
+                "history": 80
+            }
+        }
+    }
+}
+nested_student_dict['class']['student']['name'] = 'Jessa'
+print(nested_student_dict)
+
+# Exercise 10: Initialize dictionary with default values
+# In Python, we can initialize the keys with the same values.
+
+# Given:
+
+# employees = ['Kelly', 'Emma']
+# defaults = {"designation": 'Developer', "salary": 8000}
+# Expected output:
+
+# {'Kelly': {'designation': 'Developer', 'salary': 8000}, 'Emma': {'designation': 'Developer', 'salary': 8000}}
+employees = ['Kelly', 'Emma']
+defaults = {"designation": 'Developer', "salary": 8000}
+#usually from keys gets the key as any list or tuple and all values will be the same
+result = dict.fromkeys(employees,defaults)
+print(result['Kelly'])
+
+# Exercise 11: Create a dictionary by extracting the keys from a given dictionary
+# Write a Python program to create a new dictionary by extracting the mentioned keys from the below dictionary.
+
+# Given dictionary:
+
+# sample_dict = {
+#     "name": "Kelly",
+#     "age": 25,
+#     "salary": 8000,
+#     "city": "New york"}
+
+# # Keys to extract
+# keys = ["name", "salary"]
+# Expected output:
+
+# {'name': 'Kelly', 'salary': 8000}
+
+sample_dict = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"}
+keys = ["name","salary"]
+new_dict = {}
+for i in keys:
+    if i in sample_dict:
+        new_dict[i] = sample_dict[i]
+print(new_dict)
+
+# Exercise 12: Delete a list of keys from a dictionary
+# Given:
+
+# sample_dict = {
+#     "name": "Kelly",
+#     "age": 25,
+#     "salary": 8000,
+#     "city": "New york"
+# }
+
+# # Keys to remove
+# keys = ["name", "salary"]
+# Expected output:
+
+# {'city': 'New york', 'age': 25}
+
+sample_dict = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"
+}
+keys = ["name", "salary"]
+for i in keys:
+    sample_dict.pop(i)
+print(sample_dict)
+
+# Exercise 15: Get the key of a minimum value
+# Write a code to print the key of a minimum value from the following dictionary.
+
+# sample_dict = {
+#   'Physics': 82,
+#   'Math': 65,
+#   'history': 75
+# }
+# Expected output:
+
+# Math
+
+sample_dict = {
+  'Physics': 82,
+  'Math': 65,
+  'history': 75
+}
+min_value_key = min(sample_dict,key=sample_dict.get)
+print("The minimum value of the key in dictionary is: ",min_value_key)
+
+# Exercise 16: Change value of a key in a nested dictionary
+# Write a Python program to change Brad’s salary to 8500 in the following dictionary.
+
+# Given:
+
+# sample_dict = {
+#     'emp1': {'name': 'Jhon', 'salary': 7500},
+#     'emp2': {'name': 'Emma', 'salary': 8000},
+#     'emp3': {'name': 'Brad', 'salary': 500}
+# }
+# Expected output:
+
+# {
+#    'emp1': {'name': 'Jhon', 'salary': 7500},
+#    'emp2': {'name': 'Emma', 'salary': 8000},
+#    'emp3': {'name': 'Brad', 'salary': 8500}
+# }
+
+
+sample_dict = {
+    'emp1': {'name': 'Jhon', 'salary': 7500},
+    'emp2': {'name': 'Emma', 'salary': 8000},
+    'emp3': {'name': 'Brad', 'salary': 500}
+}
+
+sample_dict['emp3']['salary'] = 8500
+print(sample_dict)
+
+# Exercise 17: Invert Dictionary
+# Write a code to swap keys and values in a dictionary. Assume all values are unique
+
+# Given:
+
+# original_dict1 = {'a': 1, 'b': 2, 'c': 3}
+# Expected Output:
+
+# Original dictionary 1: {'a': 1, 'b': 2, 'c': 3}
+# Inverted dictionary 1: {1: 'a', 2: 'b', 3: 'c'}
+
+original_dict1 = {'a': 1, 'b': 2, 'c': 3}
+
+new_dict = {}
+
+for key, value in original_dict1.items():
+    new_dict[value] = key
+print(new_dict)
+
+# Exercise 18: Sort Dictionary by Keys
+# Sort a dictionary by its keys and print the sorted dictionary (as an OrderedDict or by converting to a list of tuples).
+
+# Given:
+
+# my_dict = {'apple': 3, 'zebra': 1, 'banana': 2, 'cat': 4}
+# Expected Output:
+
+# Original dictionary: {'apple': 3, 'zebra': 1, 'banana': 2, 'cat': 4}
+
+# Sorted by keys (as OrderedDict):
+# OrderedDict([('apple', 3), ('banana', 2), ('cat', 4), ('zebra', 1)])
+
+my_dict = {'apple': 3, 'zebra': 1, 'banana': 2, 'cat': 4}
+original_dictionary = my_dict
+print("The original dictionary before sort is : ", original_dictionary)
+order_dic = sorted(my_dict.items())
+print("Sorted by keys: ",order_dic)
+
+from collections import OrderedDict
+
+my_dict = {'apple': 3, 'zebra': 1, 'banana': 2, 'cat': 4}
+print(f"Original dictionary: {my_dict}")
+
+# Method 1: Create an OrderedDict (maintains insertion order, good for sorted views)
+# In Python 3.7+, dicts already preserve insertion order, so this might be redundant
+# if you just create a new dict from sorted items.
+print("\nSorted by keys (as OrderedDict):")
+sorted_by_key_ordered_dict = OrderedDict(sorted(my_dict.items()))
+print(sorted_by_key_ordered_dict)
+
+# Method 2: Convert to a list of (key, value) tuples, sorted by key
+print("\nSorted by keys (as list of tuples):")
+sorted_list_of_tuples = sorted(my_dict.items())
+print(sorted_list_of_tuples)
+
+# Exercise 19: Sort Dictionary by Values
+# Sort a dictionary by its values and print the sorted dictionary (as an OrderedDict or by converting to a list of tuples).
+
+# Given:
+
+# my_dict = {'Jessa': 3, 'Kelly': 1, 'Jon': 2, 'Kerry': 4, 'Joy': 1}
+# Expected Output:
+
+# Original dictionary: {'Jessa': 3, 'Kelly': 1, 'Jon': 2, 'Kerry': 4, 'Joy': 1}
+
+# Sorted by values (as OrderedDict):
+# OrderedDict([('Jessa', 3), ('Kelly', 1), ('Jon', 2), ('Kerry', 4), ('Joy', 1)])
+my_dict = {'Jessa': 3, 'Kelly': 1, 'Jon': 2, 'Kerry': 4, 'Joy': 1}
+sorted_dict = dict(sorted(my_dict.items(), key=lambda x: x[1]))
+print("After sorting based on values:", sorted_dict)
+
+# Exercise 20: Check if All Values are Unique
+# Write a function that takes a dictionary and returns True if all values in the dictionary are unique, False otherwise.
+
+# Given:
+
+# dict1 = {'a': 1, 'b': 2, 'c': 3}             # All values unique
+# dict2 = {'x': 10, 'y': 20, 'z': 10}          # Value 10 is duplicated
+# dict3 = {} # Empty dictionary (all values are vacuously unique)
+# Expected Output:
+
+# Dictionary: {'a': 1, 'b': 2, 'c': 3} -> All values unique? True
+# Dictionary: {'x': 10, 'y': 20, 'z': 10} -> All values unique? False
+# Dictionary: {} -> All values unique? True
+
+dict1 = {'a': 1, 'b': 2, 'c': 3}             # All values unique
+dict2 = {'x': 10, 'y': 20, 'z': 10}          # Value 10 is duplicated
+dict3 = {}
+def unique(a):
+    all_values = list(a.values())
+    sets = set(all_values)
+    if len(all_values) != len(sets):
+        return False
+    return True
+print(unique(dict1))
+print(unique(dict2))
+print(unique(dict3))
