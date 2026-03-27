@@ -79,3 +79,98 @@ set1 = {10, 20, 30}
 set2 = {20, 40, 50}
 set1.difference_update(set2)
 print(set1)
+# Exercise 8: Remove Items From Set Simultaneously
+# Write a Python program to remove items 10, 20, 30 from the following set at once.
+# Given:
+# set1 = {10, 20, 30, 40, 50}
+# Expected output:
+# {40, 50}
+set1 = {10, 20, 30, 40, 50}
+set2 = {10,20,30}
+set1.difference_update(set2)
+print(set1)
+# Exercise 9: Check Subset
+# Check if set1 is a subset of set2. Write a code to return True if every element in the subset_set is also present in the main_set.
+# Given:
+# subset_set = {10, 20}
+# main_set = {10, 20, 30, 40}
+# Expected Output:
+# True
+subset_set = {10, 20}
+main_set = {10, 20, 30, 40}
+print(subset_set.issubset(main_set))
+# Exercise 10: Check Superset
+# Check if main_set = {10, 20, 30, 40} is a superset of subset_set = {10, 20}.
+# Given:
+# set1 = {10, 20}
+# set2 = {10, 20, 30, 40}
+# Expected Output:
+# True
+set1 = {10, 20}
+set2 = {10, 20, 30, 40}
+print(set2.issuperset(set1))
+# Exercise 11: Set Intersection Check
+# Write a code to check if two sets have any elements in common. If yes, display the common elements
+# Given:
+# set1 = {10, 20, 30, 40, 50}
+# set2 = {60, 70, 80, 90, 10}
+# Expected output:
+# Two sets have items in common
+# {10}
+set1 = {10, 20, 30, 40, 50}
+set2 = {60, 70, 80, 90, 10}
+print("The number in comman is", set1.intersection(set2))
+print("The number which is not comman is ",set1.symmetric_difference(set2))
+# Exercise 12: Set Symmetric Difference Update
+# Write a program to update set1 by adding items from set2 that are not common to both sets.
+# Given:
+# set1 = {10, 20, 30, 40, 50}
+# set2 = {30, 40, 50, 60, 70}
+# Expected output:
+# {70, 10, 20, 60}
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+print("The number which is not comman is ",set1.symmetric_difference(set2))
+# Exercise 13: Set Intersection Update
+# Write a code to remove items from set1 that are not present in set2.
+# Given:
+# set1 = {10, 20, 30, 40, 50}
+# set2 = {30, 40, 50, 60, 70}
+# Expected output:
+# {40, 50, 30}
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+set1.intersection_update(set2)
+print("The number that is present in set1 but not in set2 are: ",set1)
+# Exercise 14: Find Common Elements in Two Lists
+# list1 = [10, 20, 30, 40] and list2 = [30, 40, 50, 60], find the common elements using sets.
+# Given:
+# list1 = [10, 20, 30, 40]
+# list2 = [30, 40, 50, 60]
+# Expected Output:
+# {40, 30}
+list1 = [10, 20, 30, 40]
+list2 = [30, 40, 50, 60]
+setlist1 = set(list1)
+setlist2 = set(list2)
+set3 = setlist1.intersection(set2)
+print("The comman number is: ",set3)
+# Exercise 15: Frozen Set
+# Create a frozen set from a list.
+# Given:
+# my_list = [10, 20, 30]
+# Expected Output:
+# ({10, 20, 30})
+my_list = [10, 20, 30]
+frozen = frozenset(my_list)
+print(frozen)
+# Exercise 16: Count Unique Words
+# Write a code to count the number of unique words in the given a sentence.
+# Given:
+# sentence = "dog is a simple animal dogs is selfless animal"
+# Expected Output:
+# Number of unique words: 7
+sentence = "dog is a simple animal dogs is selfless animal"
+words = sentence.lower().split()
+set1 = set(words)
+print(len(set1))
