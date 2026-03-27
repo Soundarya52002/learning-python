@@ -173,4 +173,4 @@ print(frozen)
 sentence = "dog is a simple animal dogs is selfless animal"
 words = sentence.lower().split()
 set1 = set(words)
-print(len(set1))
+print("The number of unique words are: ",len(set1))
