@@ -1,0 +1,26 @@
+from datetime import date,time,datetime
+import pytz
+date1 = date(2023,12,5)
+print(date1)
+date2 = date.today()
+print("Today is: ",date2)
+timeobj = datetime.now()
+print("The current time is: ",timeobj)
+timeobj2 = time()
+print("Empty time is: ",timeobj2)
+timeobj3 = time(hour=2,minute=30,second=50)
+print("The time with hour min and seconds are: ", timeobj3)
+timeobj4 = datetime.now()
+print("Time stamp is: ",timeobj4.timestamp())
+timestampvalue = 1774594754.572916
+timeobj5 = datetime.fromtimestamp(timestampvalue)
+print("The date from the timestamp is: ",timeobj5)
+current = datetime.now()
+date_time_str = current.strftime("%d/%m/%y %H:%M:%S")
+print("The time and date in string format is: ",date_time_str)
+current_date_time = datetime.now()
+previous_date_time = datetime(year=2020,month=3,day=24,hour=13,second=50)
+timedelta = current_date_time - previous_date_time
+print("The difference between current and past is: ",timedelta)
+aware_us_central = datetime.now(pytz.timezone('US/Central'))
+print('US Central DateTime', aware_us_central)
