@@ -1,0 +1,210 @@
+# Exercise 1: Perform Basic Tuple Operations
+# Create a Tuple: Create a tuple named my_tuple containing the numbers 1, 2, 3, 4, and 5.
+# Access Elements: Access and print the third element of my_tuple.
+# Tuple Length: Find and print the length of my_tuple.
+# Expected Output:
+# My tuple: (1, 2, 3, 4, 5)
+# The third element of my_tuple: 3
+# The length of my_tuple: 5
+My_tuple = 1, 2, 3, 4, 5
+print("My tuple is: ",My_tuple)
+print("The third element of my_typle is: ",My_tuple[2])
+print("The length of my_tuple is: ",len(My_tuple))
+# Exercise 2: Tuple Repetition
+# Repeat a below tuple three times.
+# Given:
+# original_tuple = ('a', 'b')
+# Expected Output:
+# ('a', 'b', 'a', 'b', 'a', 'b')
+original_tuple = ('a', 'b')
+thrice = original_tuple*3
+print(thrice)
+# Exercise 3: Slicing Tuples
+# Slice below tuple to get elements from the 4th to the 7th position.
+# Given:
+# numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+# Expected Output:
+# (4, 5, 6, 7)
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+print(numbers[3:7])
+# Exercise 4: Reverse the tuple
+# Given:
+# tuple1 = (10, 20, 30, 40, 50)
+# Expected output:
+# (50, 40, 30, 20, 10)
+tuple1 = (10, 20, 30, 40, 50)
+print(tuple1[::-1])
+# Exercise 5: Access Nested Tuples
+# Write a code to access and print value 20 from given nested tuple.
+# Given:
+# tuple1 = ("Orange", [10, 20, 30], (5, 15, 25))
+# Expected output:
+# 20
+tuple1 = ("Orange", [10, 20, 30], (5, 15, 25))
+print(tuple1[1][1])
+# Exercise 6: Create a tuple with single item 50
+tuple1 = (50,)
+print(tuple1)
+# Exercise 7: Unpack the tuple into 4 variables
+# Write a code to unpack the following tuple into four variables and display each variable.
+# Given:
+# tuple1 = (10, 20, 30, 40)
+# Expected output:
+tuple1 = (10, 20, 30, 40)
+a,b,c,d = tuple1
+print(a) # should print 10
+print(b) # should print 20
+print(c) # should print 30
+print(d) # should print 40
+# Exercise 8: Swap two tuples in Python
+# Given:
+# tuple1 = (11, 22)
+# tuple2 = (99, 88)
+# Expected output:
+# tuple1: (99, 88)
+# tuple2: (11, 22)
+tuple1 = (11, 22)
+tuple2 = (99, 88)
+temp = tuple1
+tuple1 = tuple2
+tuple2 = temp
+print("tuple1: ",tuple1)
+print("tuple2: ",tuple2)
+# Exercise 9: Copy Specific Elements From Tuple
+# Write a program to copy elements 44 and 55 from the following tuple into a new tuple.
+# Given:
+# tuple1 = (11, 22, 33, 44, 55, 66)
+# Expected output:
+# tuple2: (44, 55)
+tuple1 = (11, 22, 33, 44, 55, 66)
+tuple2 = tuple1[3:5]
+print("tuple2: ",tuple2)
+# Exercise 10: List to Tuple
+# Convert a list my_list = [10, 20, 30] into a tuple.
+# Expected Output:
+# (10, 20, 30)
+my_list = [10, 20, 30]
+tuplemylist = tuple(my_list)
+print(tuplemylist)
+# Exercise 11: Function Returning Tuple
+# Write a function get_min_max(numbers) that takes a list of numbers and returns a tuple containing the minimum and maximum number.
+# Given:
+# def get_min_max(numbers):
+#     # Write your code here
+# # Test the function
+# my_numbers = [10, 5, 20, 2, 15]
+# min_max_values = get_min_max(my_numbers)
+# print(f"Original numbers: {my_numbers}")
+# print(f"Minimum and maximum values: {min_max_values}")
+# Expected Output:
+# Original numbers: [10, 5, 20, 2, 15]
+# Minimum and maximum values: (2, 20)
+def get_min_max(numbers):
+    setmy = set(numbers)
+    minimum = min(setmy)
+    maximum = max(setmy)
+    return (minimum,maximum)
+
+# Test the function
+my_numbers = [10, 5, 20, 2, 15]
+min_max_values = get_min_max(my_numbers)
+print(f"Original numbers: {my_numbers}")
+print(f"Minimum and maximum values: {min_max_values}")
+# Exercise 12: Comparing Tuples
+# Compare two tuples and find out which one is “greater” and why?
+# Given:
+# t1 = (1, 2, 3)
+# t2 = (1, 2, 4)
+# Expected Output:
+# Tuple 1: (1, 2, 3, 8)
+# Tuple 2: (1, 2, 4, 5)
+# (1, 2, 3, 8) is less than (1, 2, 4, 5)
+t1 = (1, 2, 3)
+t2 = (1, 2, 4)
+print("The tuple1 is: ",t1)
+print("The tuple2 is: ",t2)
+if t1 > t2:
+    print("T1 is greater: ",t1)
+elif t2 > t1:
+    print("t2 is greater than t2: ",t2)
+else:
+    print("t1 and t2 are equal")
+# Exercise 13: Removing Duplicates from Tuple
+# Write a code to create a new tuple with only unique elements.
+# Given:
+# my_tuple = (1, 2, 2, 3, 4, 4, 5)
+# Expected Output:
+# Original tuple with duplicates: (1, 2, 2, 3, 4, 4, 5)
+# Tuple with unique elements: (1, 2, 3, 4, 5)
+my_tuple = (1, 2, 2, 3, 4, 4, 5)
+print("Original tuple with duplicates: ",my_tuple)
+sets = set(my_tuple)
+backtotuple = tuple(sets)
+print("Tuple with unique elemets: ",backtotuple)
+# Exercise 14: Filter Tuples
+# Write a code to filter out students with scores less than 90 from a given a list of tuples.
+# Given:
+# students = [('Alice', 85), ('Bob', 92), ('Charlie', 78)]
+# Expected Output:
+# Students with scores 90 or above: [('Bob', 92), ('David', 95)]
+#students = [('Alice', 85), ('Bob', 92), ('Charlie', 78)]
+students = [('Alice', 85), ('Bob', 92), ('Charlie', 78), ('David', 95)]
+print(f"Original student list: {students}")
+high_achievers_loop = []
+for student in students:
+  if student[1] >= 90:
+    high_achievers_loop.append(student)
+print(f"Students with scores 90 or above (loop method): {high_achievers_loop}")
+# Exercise 15: Map Tuples
+# Given a tuple of numbers, create a new tuple where each number is squared.
+# Given:
+# t = (1, 2, 3, 4)
+# Expected Output:
+# Original tuple: (1, 2, 3, 4)
+# Squared tuple:  (1, 4, 9, 16)
+t = (1, 2, 3, 4)
+print("Original tuple: ",t)
+a = []
+for i in t:
+   a.append(i*i)
+print("Squared tuple: ",tuple(a))
+# Exercise 16: Modify Tuple
+# Given is a nested tuple. Write a program to modify the first item (22) of a list inside a following tuple to 222
+# Given:
+# tuple1 = (11, [22, 33], 44, 55)
+# Expected output:
+# tuple1: (11, [222, 33], 44, 55)
+tuple1 = (11, [22, 33], 44, 55)
+tuple1[1][0] = 222
+print(tuple1)
+# Exercise 17: Sort a tuple of tuples by 2nd item
+# Given:
+# tuple1 = (('a', 23),('b', 37),('c', 11), ('d',29))
+# Expected output:
+# (Sorted tuple by 2nd item: (('c', 11), ('a', 23), ('d', 29), ('b', 37))
+# 1. Sort a tuple by 2nd item
+tuple1 = (('a', 23), ('b', 37), ('c', 11), ('d', 29))
+print(f"Original tuple: {tuple1}")
+list1 = list(tuple1)
+sorted_list = sorted(list1, key=lambda item: item[1])
+sorted_tuple = tuple(sorted_list)
+print(f"Sorted tuple by 2nd item: {sorted_tuple}")
+# Exercise 18: Count Elements
+# Write a code to counts the number of occurrences of item 50 from a tuple.
+# Given:
+# tuple1 = (50, 10, 60, 70, 50)
+# Expected output:
+# 2
+tuple1 = (50, 10, 60, 70, 50)
+count = 0
+for i in tuple1:
+   if i == 50:
+      count = count+1
+print(count)
+# Exercise 19: Check if all items in the tuple are the same
+# tuple1 = (45, 45, 45, 45)
+# Expected output:
+# True
+tuple1 = (45, 45, 45, 45)
+result = len(set(tuple1)) == 1
+print(result)
