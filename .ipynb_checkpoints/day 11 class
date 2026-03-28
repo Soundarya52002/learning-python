@@ -147,3 +147,83 @@ p1 = Company("Soundary")
 print(f"{p1.name} works in {Company.company}")
 p2 = Company("Sowbagya")
 print(f"{p2.name} works in {Company.company}")
+# 16. Student grade system
+# Store marks
+# Method to return grade (A/B/C)
+class Student:
+    def __init__(self,name,marks):
+        self.name= name
+        self.marks = marks
+    def grades(self):
+        if self.marks >= 90:
+            return 'A'
+        elif self.marks >=80 and self.marks < 90:
+            return 'B'
+        else:
+            return 'c'
+s1 = Student('Soundarya',100)
+print(s1.grades())
+# OOP Exercise 3: Create a child class Bus that will inherit all of the variables and methods of the Vehicle class
+# Given:
+
+# class Vehicle:
+
+#     def __init__(self, name, max_speed, mileage):
+#         self.name = name
+#         self.max_speed = max_speed
+#         self.mileage = mileage
+
+# Create a Bus object that will inherit all of the variables and methods of the parent Vehicle class and display it.
+
+# Expected Output:
+
+# Vehicle Name: School Volvo Speed: 180 Mileage: 12
+
+class Vehicle:
+
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+    def display(self):
+        print(f"Vehicle name: {self.name} speed: {self.max_speed} mileage: {self.mileage}")
+class Bus(Vehicle):
+    pass
+b = Bus('School Volvo', 180, 12)
+b.display()
+# OOP Exercise 4: Class Inheritance
+# Given:
+
+# Create a Bus class that inherits from the Vehicle class. Give the capacity argument of Bus.seating_capacity() a default value of 50.
+
+# Use the following code for your parent Vehicle class.
+
+# class Vehicle:
+#     def __init__(self, name, max_speed, mileage):
+#         self.name = name
+#         self.max_speed = max_speed
+#         self.mileage = mileage
+
+#     def seating_capacity(self, capacity):
+#         return f"The seating capacity of a {self.name} is {capacity} passengers"
+
+# Expected Output:
+
+# The seating capacity of a bus is 50 passengers
+
+class Vehicle:
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+    def seating_capacity(self, capacity):
+        return f"The seating capacity of a {self.name} is {capacity} passengers"
+    
+class Bus(Vehicle):
+    def seating_capacity(self, capacity = 50):
+        return super().seating_capacity(capacity=50)
+b = Bus("School Volvo", 180, 12)
+b.seating_capacity()
+    
+    
