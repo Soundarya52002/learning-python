@@ -1,0 +1,58 @@
+# Exercise 1: Print first 10 natural numbers using while loop
+i = 1
+while(i <= 10):
+    print(i)
+    i = i+1
+# Exercise 2: Print the following pattern
+# Write a Python code to print the following number pattern using a loop.
+# 1 
+# 1 2 
+# 1 2 3 
+# 1 2 3 4 
+# 1 2 3 4 5
+n = 5
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(j,end=' ')
+    print(" ")
+# Exercise 3: Calculate sum of all numbers from 1 to a given number
+# Write a Python program to accept a number from a user and calculate the sum of all numbers from 1 to a given number
+# For example, if the user entered 10, the output should be 55 (1+2+3+4+5+6+7+8+9+10)
+# Expected Output:
+# Enter number 10
+# Sum is:  55
+number = int(input("Enter a number: "))
+count = 0
+for i in range(1,number+1):
+    count = count+i
+print("Total is: ",count)
+# 🔹 Problem 1
+# Convert this dictionary to JSON string
+data = {"name": "John", "age": 25}
+import json
+a = json.dumps(data)
+print(a)
+# 🔹 Problem 2
+# Save this into a file using dump()
+import json
+data = {"city": "Chennai", "pincode": 600001}
+with open("file1forjson.txt",'w') as wf:
+     json.dump(data,wf)
+print("Done writing file into the json")
+# 🔹 Problem 3
+# Print JSON in pretty format
+data = {"a":1,"b":2,"c":3}
+with open("file2forjson.txt",'w') as wf:
+    json.dump(data,wf,separators=(" ",":"),indent=4)
+print("Done writing file into json")
+# 🔹 Problem 4
+# Convert list into JSON string
+import json
+data = [1, 2, 3, 4]
+b = json.dumps(data)
+print(b)
+# 🔹 Problem 5
+# Handle Unicode
+data = {"currency": "₹"}
+print("JSON character encoding by setting ensure_ascii=False")
+print(json.dumps(data, ensure_ascii=False))
