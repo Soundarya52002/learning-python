@@ -1,0 +1,149 @@
+# 1. Create a class
+# Create a class Student
+# Just print "Student created"
+class Student:
+    print("Student created")
+stu1 = Student()
+# 2. Create object
+# Create class Car
+# Create 2 objects and print something
+class Car:
+    def colour(self, name):
+        self.name = name
+        return self.name
+
+c1 = Car()
+print(c1.colour("Yellow"))
+c2 = Car()
+print(c2.colour("Red"))
+# 3. Constructor (__init__)
+# Create class Person
+# Store name and age
+# Print themc
+class Person:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+p1 = Person('Soundarya',23)
+print(p1.name,p1.age)
+# 4. Method inside class
+# Create class Dog
+# Add method bark() → prints "Dog is barking"
+class Dog:
+    def __init__(self,name):
+        self.name = name
+    def bark(self):
+        print(f"Dog which got name as {self.name} is barking")
+d1 = Dog('Tommy')
+d1.bark()
+# 5. Multiple attributes
+# Create class Book
+# Store title, author, price
+# Print all details
+class Book:
+    def __init__(self,store,title,author,price):
+        self.store = store
+        self.title = title
+        self.author = author
+        self.price = price
+    def printing(self):
+        print(f"the store name is {self.store} and the title of the book is {self.title} which is written by {self.author} and the price is{self.price}")
+b1 = Book('ABC','Ponniyin selvan','Kalki','150')
+b1.printing()
+# 6. Add method to display data
+# Class Employee
+# Store name, salary
+# Method display()
+class Employee:
+    def __init__(self,name,sal):
+        self.a = name
+        self.salary = sal
+    def display(self):
+        print(f"The name is {self.a} and the salary is {self.salary}")
+e1 = Employee("Soundary",'50000000000')
+e1.display()
+# 7. Calculate something
+# Class Rectangle
+# Store length & width
+# Method to calculate area
+class rectangle:
+    def __init__(self,len,width):
+        self.len = len
+        self.width = width
+    def calculation(self):
+        return self.len * self.width
+r1 = rectangle(5,2)
+print(r1.calculation())
+# 10. Count objects
+# Create class Student
+# Count how many objects created
+class Student():
+    count = 0
+    def __init__(self):
+        Student.count = Student.count+1
+s1 = Student()
+s2 = Student()
+print(Student.count)
+# 11. Inheritance (basic)
+# Class Animal
+# Method eat()
+# Child class Dog
+class Animal():
+    def eating(self):
+        print("Animal is eating")
+class Dog(Animal):
+    def dogeat(self):
+        print("Dog is eating")
+d = Dog()
+d.eating()
+d.dogeat()
+# 12. Method overriding
+# Parent: Animal → method sound()
+# Child: Cat → override it
+class Animal():
+    def sound(self):
+        print("inside the animal class")
+class Cat(Animal):
+    def sound(self):
+        print("inside the cat class")
+c = Cat()
+c.sound()
+# 13. Multiple methods
+# Class Calculator
+# Methods: add, subtract, multiply
+class Calculator():
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
+    def add(self):
+        return self.a + self.b
+    def sub(self):
+        return self.a - self.b
+    def mul(self):
+        return self.a * self.b
+c = Calculator(5,5)
+print(c.add())
+print(c.sub())
+print(c.mul())
+# 14. Encapsulation (private variable)
+# Class Account
+# Make balance private
+# Use getter method
+class Account():
+    def __init__(self,bal):
+        self.__bal = bal
+    def get_bal(self):
+        return self.__bal 
+a = Account(50)
+print(a.get_bal())
+# 15. Class variable
+# Create class Company
+# Same company name for all employees
+class Company:
+    company = "Google"
+    def __init__(self,name):
+        self.name = name
+p1 = Company("Soundary")
+print(f"{p1.name} works in {Company.company}")
+p2 = Company("Sowbagya")
+print(f"{p2.name} works in {Company.company}")
