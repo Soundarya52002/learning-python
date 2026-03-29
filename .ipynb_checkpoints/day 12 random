@@ -56,3 +56,31 @@ print(b)
 data = {"currency": "₹"}
 print("JSON character encoding by setting ensure_ascii=False")
 print(json.dumps(data, ensure_ascii=False))
+# Exercise 4: Print multiplication table of a given number
+# Given:
+# num = 2
+# Expected output is:
+# 2
+# 4
+# 6
+# 8
+# 10
+# 12
+# 14
+# 16
+# 18
+# 20
+number = int(input("Enter a number for the multiplication: "))
+i=1
+while(i<=10):
+    print(number*i)
+    i=i+1
+# Now, let’s see the example. For this example, I am reading the “developer.json” file present on my hard drive. This file contains the following JSON data.
+import json
+with open('developer.json','r') as rf:
+    print("Reading the developer.json file using load")
+    developer = json.load(rf)
+    print("Decoding the json file\n")
+    for key,value in developer.items():
+        print(key, ":", value)
+    print("Done reading the json file")
