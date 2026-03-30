@@ -84,3 +84,26 @@ with open('developer.json','r') as rf:
     for key,value in developer.items():
         print(key, ":", value)
     print("Done reading the json file")
+#json.loads() to convert JSON string to a dictionary
+import json
+
+developerJsonString = """{
+    "name": "jane doe",
+    "salary": 9000,
+    "skills": [
+        "Raspberry pi",
+        "Machine Learning",
+        "Web Development"
+    ],
+    "email": "JaneDoe@pynative.com",
+    "projects": [
+        "Python Data Mining",
+        "Python Data Science"
+    ]
+}
+"""
+print("Start converting json string document into python dictionary")
+dev = json.loads(developerJsonString)
+for key,value in dev.items():
+    print(key, ":", value)
+print("Done converting JSON string document to a dictionary")
