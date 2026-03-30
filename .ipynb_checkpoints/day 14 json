@@ -1,0 +1,27 @@
+import json
+from json import JSONEncoder
+class Employee:
+    def __init__(self,name,salary,address):
+        self.name = name
+        self.salary = salary
+        self.address = address
+class Address:
+    def __init__(self, city, street, pin):
+        self.city = city
+        self.street = street
+        self.pin = pin
+#subclass of encoder class
+class Subclassofencoder(JSONEncoder):
+    def default(self, o):
+        return o.__dict__
+
+e = Employee("Soundarya",50000000,"Chennai")
+a = Address("Chennai","Madipakkam",600091)
+print("Printing to check how it will look like")
+print(Subclassofencoder().encode(e))
+print("Encode Employee Object into JSON formatted Data using custom JSONEncoder")
+employeejsondata = json.dumps(e,indent=4,cls=Subclassofencoder)
+print(employeejsondata)
+print("Decode JSON formatted Data")
+employeejson = json.loads(employeejsondata)
+print(employeejson)
