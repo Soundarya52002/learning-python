@@ -1,0 +1,18 @@
+# Print reverse number from 10 to 1
+# Pattern: –
+
+# 1
+# 3 2
+# 6 5 4
+# 10 9 8 7
+start  = 1
+stop = 2
+current_num = stop 
+for i in range(2,6):
+    for j in range(start,stop):
+        current_num = current_num -1
+        print(current_num,end=" ")
+    start = stop
+    stop = stop + i 
+    current_num = stop
+    print("")
